@@ -1,0 +1,19 @@
+{
+  "web": { "concurrency": 1 },
+  "app": "sheerid",
+  "proxy": null,
+  "browser": { "headless": false, "locale": "en-US", "keepOpen": true, "autoFill": true },
+  "document": { "path": "", "url": "" },
+  "timeouts": { "apiMs": 20000, "actionMs": 15000, "navigationMs": 60000, "readyMs": 120000, "humanMs": 180000, "resultMs": 45000 },
+  "interaction": {
+    "keyDelayMs": { "min": 40, "max": 120 },
+    "fieldDelayMs": { "min": 500, "max": 1200 },
+    "submitDelayMs": { "min": 1000, "max": 2000 }
+  },
+  "artifactsDir": ".runs",
+  "data": {
+    "country": "",
+    "organization": { "name": "", "optionText": "", "emailDomain": "example.edu" }
+  },
+  "selectors": {}
+}

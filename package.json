@@ -1,0 +1,36 @@
+{
+  "name": "sheeridverify",
+  "version": "1.0.0",
+  "description": "Extensible verification workflows with fetch and Camoufox adapters",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node --experimental-test-module-mocks --test",
+    "start": "node init && node src/cli.js",
+    "web": "node src/web/server.js",
+    "status": "node src/cli.js --status",
+    "submit": "node src/cli.js --submit",
+    "browser:install": "node scripts/install-browser.js"
+  },
+  "keywords": [],
+  "author": "JenkinWoo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JenkinWoo/sheeridVerify.git"
+  },
+  "homepage": "https://github.com/JenkinWoo/sheeridVerify#readme",
+  "bugs": {
+    "url": "https://github.com/JenkinWoo/sheeridVerify/issues"
+  },
+  "license": "ISC",
+  "type": "module",
+  "engines": {
+    "node": ">=22.15"
+  },
+  "dependencies": {
+    "camoufox": "^0.5.9",
+    "playwright-core": "^1.62.1",
+    "proxy-chain": "^3.0.1",
+    "undici": "^7.30.1"
+  }
+}
