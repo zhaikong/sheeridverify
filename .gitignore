@@ -1,0 +1,8 @@
+node_modules/
+!.env.example
+!deploy/.env.web.example
+config/*.local.json
+.runs/
+documents/
+*.log
+config.bat

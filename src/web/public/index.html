@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>sheeridVerify · 验证工作台</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<header><a class="brand" href="/">sheeridVerify<span>验证工作台</span></a><span class="badge" id="connection">连接中</span></header>
+<main>
+  <div class="intro"><span class="eyebrow">LOCAL WORKSPACE</span><h1>从这里开始验证</h1><p>填写本次资料，查看任务进度。</p></div>
+  <div class="workspace">
+    <form id="task-form" autocomplete="off">
+      <fieldset id="form-fields">
+        <section class="card"><div class="section-title"><h2>验证任务</h2><button id="random-fill" type="button" class="secondary small">随机填充</button></div>
+          <label>验证链接<input name="url" type="url" required placeholder="粘贴包含 verificationId 的完整验证链接"></label>
+          <div class="grid"><label>名 · First name<input name="firstName" required maxlength="150"></label><label>姓 · Last name<input name="lastName" required maxlength="150"></label></div>
+          <label>出生日期<input name="birthDate" type="date" required min="1900-01-01"></label>
+          <label>代理<input name="proxy" placeholder="留空直连；支持 host:port:username:password"></label>
+          <label>访问密码<input name="password" type="password" required autocomplete="current-password" placeholder="请输入访问密码"></label>
+        </section>
+        <div class="actions"><button id="start" type="submit" class="primary" disabled>加入队列</button><button type="reset" class="secondary">清空表单</button></div>
+      </fieldset>
+      <p id="form-error" class="error" role="alert" hidden></p>
+      <p class="privacy">其余设置使用配置文件，代理留空时直连。</p>
+    </form>
+    <aside class="progress card"><div class="progress-heading"><h2>运行进度</h2><span id="job-state" class="badge">待开始</span></div>
+      <p id="queue-summary" class="hint">正在读取队列</p>
+      <ul id="jobs" aria-label="任务队列"></ul>
+      <p id="selected-job" class="hint"></p>
+      <div class="task-actions">
+        <button id="cancel" class="secondary cancel" type="button" disabled>停止任务</button>
+        <button id="resume" class="secondary cancel" type="button" hidden>恢复任务</button>
+        <button id="delete" class="secondary cancel" type="button" hidden>删除当前任务</button>
+      </div>
+      <div class="log-heading"><h3>活动记录</h3><span id="log-count">0 条</span></div>
+      <ol id="logs" aria-label="活动记录" aria-live="polite"><li class="empty">任务开始后，进度将在这里更新。</li></ol>
+    </aside>
+  </div>
+  <footer>sheeridVerify / 本机工作台<span>按队列执行任务</span></footer>
+</main></body></html>

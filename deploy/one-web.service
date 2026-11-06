@@ -1,0 +1,18 @@
+[Unit]
+Description=sheeridVerify verification workspace
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/data/workspace/one
+EnvironmentFile=/data/workspace/one/.env.web
+Environment=DISPLAY=:1
+ExecStart=/usr/local/bin/node /data/workspace/one/src/web/server.js
+Restart=on-failure
+RestartSec=5
+KillMode=control-group
+TimeoutStopSec=60
+UMask=0077
+
+[Install]
+WantedBy=default.target
